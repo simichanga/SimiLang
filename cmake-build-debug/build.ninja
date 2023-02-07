@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/simi/Dev/C++/Simi++/cmake-build-debug/
+cmake_ninja_workdir = C$:/Dev/Repos/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target Simi__
 
@@ -49,29 +49,29 @@ cmake_ninja_workdir = /home/simi/Dev/C++/Simi++/cmake-build-debug/
 
 build cmake_object_order_depends_target_Simi__: phony || CMakeFiles/Simi__.dir
 
-build CMakeFiles/Simi__.dir/main.cpp.o: CXX_COMPILER__Simi___Debug /home/simi/Dev/C++/Simi++/main.cpp || cmake_object_order_depends_target_Simi__
-  DEP_FILE = CMakeFiles/Simi__.dir/main.cpp.o.d
+build CMakeFiles/Simi__.dir/main.cpp.obj: CXX_COMPILER__Simi___Debug C$:/Dev/Repos/main.cpp || cmake_object_order_depends_target_Simi__
+  DEP_FILE = CMakeFiles\Simi__.dir\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++23
-  OBJECT_DIR = CMakeFiles/Simi__.dir
-  OBJECT_FILE_DIR = CMakeFiles/Simi__.dir
+  OBJECT_DIR = CMakeFiles\Simi__.dir
+  OBJECT_FILE_DIR = CMakeFiles\Simi__.dir
 
-build CMakeFiles/Simi__.dir/SimiVMStack.cpp.o: CXX_COMPILER__Simi___Debug /home/simi/Dev/C++/Simi++/SimiVMStack.cpp || cmake_object_order_depends_target_Simi__
-  DEP_FILE = CMakeFiles/Simi__.dir/SimiVMStack.cpp.o.d
+build CMakeFiles/Simi__.dir/SimiVMStack.cpp.obj: CXX_COMPILER__Simi___Debug C$:/Dev/Repos/SimiVMStack.cpp || cmake_object_order_depends_target_Simi__
+  DEP_FILE = CMakeFiles\Simi__.dir\SimiVMStack.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++23
-  OBJECT_DIR = CMakeFiles/Simi__.dir
-  OBJECT_FILE_DIR = CMakeFiles/Simi__.dir
+  OBJECT_DIR = CMakeFiles\Simi__.dir
+  OBJECT_FILE_DIR = CMakeFiles\Simi__.dir
 
-build CMakeFiles/Simi__.dir/SimiParser.cpp.o: CXX_COMPILER__Simi___Debug /home/simi/Dev/C++/Simi++/SimiParser.cpp || cmake_object_order_depends_target_Simi__
-  DEP_FILE = CMakeFiles/Simi__.dir/SimiParser.cpp.o.d
+build CMakeFiles/Simi__.dir/SimiParser.cpp.obj: CXX_COMPILER__Simi___Debug C$:/Dev/Repos/SimiParser.cpp || cmake_object_order_depends_target_Simi__
+  DEP_FILE = CMakeFiles\Simi__.dir\SimiParser.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++23
-  OBJECT_DIR = CMakeFiles/Simi__.dir
-  OBJECT_FILE_DIR = CMakeFiles/Simi__.dir
+  OBJECT_DIR = CMakeFiles\Simi__.dir
+  OBJECT_FILE_DIR = CMakeFiles\Simi__.dir
 
-build CMakeFiles/Simi__.dir/SimiVMRegister.cpp.o: CXX_COMPILER__Simi___Debug /home/simi/Dev/C++/Simi++/SimiVMRegister.cpp || cmake_object_order_depends_target_Simi__
-  DEP_FILE = CMakeFiles/Simi__.dir/SimiVMRegister.cpp.o.d
+build CMakeFiles/Simi__.dir/SimiVMRegister.cpp.obj: CXX_COMPILER__Simi___Debug C$:/Dev/Repos/SimiVMRegister.cpp || cmake_object_order_depends_target_Simi__
+  DEP_FILE = CMakeFiles\Simi__.dir\SimiVMRegister.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++23
-  OBJECT_DIR = CMakeFiles/Simi__.dir
-  OBJECT_FILE_DIR = CMakeFiles/Simi__.dir
+  OBJECT_DIR = CMakeFiles\Simi__.dir
+  OBJECT_FILE_DIR = CMakeFiles\Simi__.dir
 
 
 # =============================================================================
@@ -79,22 +79,24 @@ build CMakeFiles/Simi__.dir/SimiVMRegister.cpp.o: CXX_COMPILER__Simi___Debug /ho
 
 
 #############################################
-# Link the executable Simi__
+# Link the executable Simi__.exe
 
-build Simi__: CXX_EXECUTABLE_LINKER__Simi___Debug CMakeFiles/Simi__.dir/main.cpp.o CMakeFiles/Simi__.dir/SimiVMStack.cpp.o CMakeFiles/Simi__.dir/SimiParser.cpp.o CMakeFiles/Simi__.dir/SimiVMRegister.cpp.o
+build Simi__.exe: CXX_EXECUTABLE_LINKER__Simi___Debug CMakeFiles/Simi__.dir/main.cpp.obj CMakeFiles/Simi__.dir/SimiVMStack.cpp.obj CMakeFiles/Simi__.dir/SimiParser.cpp.obj CMakeFiles/Simi__.dir/SimiVMRegister.cpp.obj
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles/Simi__.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = Simi__
-  TARGET_PDB = Simi__.dbg
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\Simi__.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Simi__.exe
+  TARGET_IMPLIB = libSimi__.dll.a
+  TARGET_PDB = Simi__.exe.dbg
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/simi/Dev/C++/Simi++/cmake-build-debug && /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cmd.exe /C "cd /D C:\Dev\Repos\cmake-build-debug && "C:\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -105,7 +107,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/simi/Dev/C++/Simi++/cmake-build-debug && /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/simi/Dev/C++/Simi++ -B/home/simi/Dev/C++/Simi++/cmake-build-debug
+  COMMAND = cmd.exe /C "cd /D C:\Dev\Repos\cmake-build-debug && "C:\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Dev\Repos -BC:\Dev\Repos\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -115,15 +117,17 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build Simi__: phony Simi__.exe
+
 # =============================================================================
 # Folder targets.
 
 # =============================================================================
 
 #############################################
-# Folder: /home/simi/Dev/C++/Simi++/cmake-build-debug
+# Folder: C:/Dev/Repos/cmake-build-debug
 
-build all: phony Simi__
+build all: phony Simi__.exe
 
 # =============================================================================
 # Built-in targets
@@ -132,14 +136,14 @@ build all: phony Simi__
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/simi/Dev/C++/Simi++/CMakeLists.txt /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeCInformation.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Compiler/GNU-C.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Compiler/GNU.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Platform/Linux-GNU-C.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Platform/Linux.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeRCInformation.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-windres.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake C$:/Dev/Repos/CMakeLists.txt CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeRCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/simi/Dev/C++/Simi++/CMakeLists.txt /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeCInformation.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Compiler/GNU-C.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Compiler/GNU.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Platform/Linux-GNU-C.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Platform/Linux.cmake /run/media/simi/VirginPart/clion-2022.3.1/bin/cmake/linux/share/cmake-3.24/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
+build C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeRCInformation.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-windres.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows.cmake C$:/CLion$ 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/WindowsPaths.cmake C$:/Dev/Repos/CMakeLists.txt CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeRCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
 
 
 #############################################

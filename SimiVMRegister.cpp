@@ -12,26 +12,36 @@ enum Registers {
 
 class SimiVMRegister {
 public:
-    SimiVMRegister(int memorySize) : SIZE(memorySize), data(new int[SIZE]) {}
+    SimiVMRegister(const int memorySize) : SIZE(memorySize), data(new int[SIZE]) {}
     ~SimiVMRegister() { delete data; }
 
-    void mov(Registers leftRegister, int rightInt) {
+    void mov(const Registers leftRegister, const int rightInt) {
         data[leftRegister] = rightInt;
 
         if (leftRegister == ZX)
             handleInstruction(rightInt);
     }
 
-    void mov(Registers left, Registers right) {
+    void mov(const Registers left, const Registers right) {
         data[left] = data[right];
     }
 
-    void add(Registers leftRegister, int rightInt) {
+    void mov(const Registers left, const char* inputString) {
+        mov(EA, loadString(inputString));
+    }
+
+    void add(const Registers leftRegister, const int rightInt) {
         data[leftRegister] += rightInt;
     }
 
-    void add(Registers left, Registers right) {
+    void add(const Registers left, const Registers right) {
         data[left] += data[right];
+    }
+
+    // Debug
+    void superPrint() {
+        for (int i = 0; i < 20; i++)
+            std::cout << data[i] << std::endl;
     }
 
 private:
@@ -45,7 +55,13 @@ private:
         DIV,
     };
 
-    void handleOperation(Operations operation, Registers left, Registers right) {
+    enum Instructions {
+        NONE,
+        PRINT_INT,
+        PRINT_STR,
+    };
+
+    void handleOperation(const Operations operation, const Registers left, const Registers right) {
         if (operation == ADD)
             data[left] += data[right];
         if (operation == SUB)
@@ -56,15 +72,21 @@ private:
             data[left] /= data[right];
     }
 
-    void handleInstruction(int instructionCode) {
-        // Read into
-        /*
-        if (instructionCode == 1)
-            for ()
-            */
+    void handleInstruction(const int instructionCode) {
+        // Print
+        switch (instructionCode) {
+            case PRINT_INT:
+                printRegInt();
+                break;
+            case PRINT_STR:
+                printRegString();
+                break;
+            default:
+                throw EXIT_FAILURE;
+        }
     }
 
-    // Returns size of string
+    // Returns size of string to put in respective EA or EB register
     int loadString(const char* inputString) {
         int inputSize;
 
@@ -72,5 +94,15 @@ private:
             data[BEGIN + inputSize] = inputString[inputSize];
 
         return inputSize;
+    }
+
+    void printRegInt() {
+        for (int i = BEGIN; i < BEGIN + data[EA]; i++)
+            std::cout << data[i];
+    }
+
+    void printRegString() {
+        for (int i = BEGIN; i < BEGIN + data[EA]; i++)
+            std::cout << (char) data[i];
     }
 };
