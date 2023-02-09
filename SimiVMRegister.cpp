@@ -12,31 +12,20 @@ enum Registers {
 
 class SimiVMRegister {
 public:
-    SimiVMRegister(const int memorySize) : SIZE(memorySize), data(new int[SIZE]) {}
+    SimiVMRegister(const int memorySize): SIZE(memorySize), data(new int[SIZE]) {}
     ~SimiVMRegister() { delete data; }
 
-    void mov(const Registers leftRegister, const int rightInt) {
-        data[leftRegister] = rightInt;
+    void mov(const Registers left, const int right) {
+        data[left] = right;
 
-        if (leftRegister == ZX)
-            handleInstruction(rightInt);
+        if (left == ZX)
+            handleInstruction(right);
     }
+    void mov(const Registers left, const Registers right) { data[left] = data[right]; }
+    void mov(const Registers left, const char* input) { mov(EA, loadString(input)); }
 
-    void mov(const Registers left, const Registers right) {
-        data[left] = data[right];
-    }
-
-    void mov(const Registers left, const char* inputString) {
-        mov(EA, loadString(inputString));
-    }
-
-    void add(const Registers leftRegister, const int rightInt) {
-        data[leftRegister] += rightInt;
-    }
-
-    void add(const Registers left, const Registers right) {
-        data[left] += data[right];
-    }
+    void add(const Registers left, const int right) { data[left] += right; }
+    void add(const Registers left, const Registers right) { data[left] += data[right]; }
 
     // Debug
     void superPrint() {
@@ -87,11 +76,11 @@ private:
     }
 
     // Returns size of string to put in respective EA or EB register
-    int loadString(const char* inputString) {
+    int loadString(const char* input) {
         int inputSize;
 
-        for (inputSize = 0; inputString[inputSize] != '\0'; inputSize++)
-            data[BEGIN + inputSize] = inputString[inputSize];
+        for (inputSize = 0; input[inputSize] != '\0'; inputSize++)
+            data[BEGIN + inputSize] = input[inputSize];
 
         return inputSize;
     }
